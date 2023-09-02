@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator 函数</title>
+</head>
+<body>
+    <script>
+        // function* helloworldGenerator() {
+        //     console.log('Generator执行');
+        //     yield 'hello';
+        //     yield 'world';
+        // }
+        // const hw = helloworldGenerator();
+        // console.log('这是测试执行先后顺序的语句');
+        // hw.next();
+        // function* helloworldGenerator(){
+        //     yield 'hello';
+        //     yield 'world';
+        //     return 'success'
+        // }
+        // const hw = helloworldGenerator();
+        // console.log(hw.next());
+        // console.log(hw.next());
+        // console.log(hw.next());
+        // console.log(hw.next());
+        // function* foo(x){
+        //     let y = 3*(yield(x+2))
+        //     let z = yield(y/4)
+        //     return x+y+z
+        // }
+        // // let a = foo(5)
+        // // console.log(a.next());
+        // // console.log(a.next());
+        // // console.log(a.next());
+        // let b = foo(5)
+        // console.log(b.next());
+        // console.log(b.next(8));
+        // console.log(b.next(9));
+        // function* testGenerator() {
+        //     yield 'hello';
+        //     yield 'world';
+        // }
+
+        // const t = testGenerator();
+        // for (let key of t) {
+        //     console.log(key); // 先后输出"hello""world"
+        // }
+        // function* testGenerator() {
+        //     yield 'test';
+        // }
+        // const tg = new testGenerator();
+        // function* testGenerator() {
+        //     this.name = 'head';
+        //     yield 'hello';
+        //     yield 'world';
+        // }
+
+        // const t = testGenerator.call(testGenerator.prototype);
+        // t.next();
+        // console.log(t.name);
+        function* fn1() {
+            yield 'test1';
+        }
+        function* fn2() {
+            yield 'test2';
+            // 手动遍历嵌套的Generator()函数 
+            // for(let key of fn1()) {
+            //     console.log(key);
+            // }
+            yield* fn1()
+            yield 'test3';
+        }
+        let f = fn2();
+        for (let key of f) {
+            console.log(key);
+        }
+    </script>
+</body>
+</html>

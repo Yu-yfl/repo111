@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module">
+        // import {name} from './export1.js';
+        // console.log(name); // cao teacher2
+        // setTimeout(() => {
+        // console.log(name); // 'cao teacher3'
+        // }, 1000);
+        // import {name} from './export1.js';
+        // import {name as personname} from './export2.js';
+        // console.log(name);
+        // console.log(personname);
+        // import * as a from './export1.js';
+        // console.log(a);
+        // import param1234 from './export1.js';
+        // console.log(param1234); // 1
+        import {counter, incCounter} from './export1.js';
+        console.log(counter); // 1
+        incCounter();
+        console.log(counter); // 2
+        // counter++;
+    </script>
+</body>
+</html>

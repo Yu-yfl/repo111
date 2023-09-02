@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01-Iterator与for...of循环</title>
+</head>
+<body>
+    <p>这是第一个段落</p>
+    <p>这是第二个段落</p>
+    <p>这是第三个段落</p>
+    <script>
+        // function makeIterator(array) {
+        //     let index = 0;
+        //     return {
+        //         next: function () {
+        //             if (index < array.length) {
+        //                 return {
+        //                     value: array[index++], 
+        //                     done: false
+        //                 };
+        //             } else {
+        //                 return {
+        //                     value: undeﬁned, 
+        //                     done: true
+        //                 };
+        //             }
+        //         }
+        //     };
+        // }
+        // const arr = ['one', 'two'];
+        // const iter = makeIterator(arr);
+        // console.log(iter.next()); 
+        // console.log(iter.next()); 
+        // console.log(iter.next()); 
+    //    const obj = {
+    //         name: 'cao teacher',
+    //         age: 11
+    //     };
+    //     for (let key of obj) {
+    //         console.log(key); // TypeError: obj[Symbol.iterator] is not a function
+    //     }
+    // 数组能正常使用for...of循环
+    // const arr = ['one', 'two'];
+    // for (let key in arr) {
+    //     console.log(key); // 0, 1
+    // }
+    // function Person(name,age){
+    //     this.name = name
+    //     this.age = age
+    // }
+    // Person.prototype[Symbol.iterator] = function(){
+    //     // 设置变量 记录遍历的次数
+    //     let count = 0
+    //     // 通过object.keys()函数获取自身的所有属性
+    //     let propArr = Object.keys(this)
+    //     return {
+    //         next:function(){
+    //             if(count<propArr.length){
+    //                 let index = count++
+    //                 return {
+    //                     value:propArr[index],
+    //                     done:false
+    //                 }
+    //             }else {
+    //                 return {
+    //                     value:undefined,
+    //                     done:true
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+    // const person = new Person('cao','18')
+    // for(let key of person){
+    //     console.log(key);
+    // }
+    // const arr = ['one', 'two', 'three'];
+    // for (let key in arr) {
+    //     console.log(key); // one, two, three
+    // }
+    // let map = new Map();
+    // map.set('name', 'cao teacher');
+    // map.set('age', 12);
+    // map.set('address', 'beijing');
+    // for (let prop of map) {
+    //     console.log(prop);
+    // }
+    // const pList = document.querySelectorAll('p');
+    // for (let p of pList) {
+    //     console.log(p.innerText);
+    // }
+    //     function foo() {
+    //     for (let arg of arguments) {
+    //         console.log(arg);
+    //     }
+    // }
+    // foo('name', 'age', 'address');
+    const arr = ['one', 'two', 'three'];
+    arr.forEach(function (item, index) {
+        if (index === 1) {
+            return item; // 这里如果使用break和continue关键字，会抛出异常，使用return 
+                        // 关键字会跳过当前循环
+        }
+        console.log(item);
+    });
+    </script>
+</body>
+</html>

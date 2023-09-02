@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class</title>
+</head>
+<body>
+    <script>
+        // class Person {
+        //     constructor(name){
+        //         this.name = name
+        //         // return {}
+        //     }
+        //     getName(){
+        //         return this.name
+        //     }
+        // }
+        // const p = new Person('cao teacher')
+        // console.log(p.getName());
+        // class Foo {
+        //     static classProp = 'staticProp'
+        //     static classMetod(){
+        //         return 'hello'
+        //     }
+        // }
+        // console.log(Foo.classProp);
+        // console.log(Foo.classMetod());
+        // const foo = new Foo()
+        // console.log(foo.classProp);
+        // console.log(foo.classMetod());
+        // class MyClassRoom {
+        //     constructor(number){
+        //         this.number = number
+        //     }
+        //     static get(){
+        //         return this.number
+        //     }
+        //     get(){
+        //         return this.number
+        //     }
+        // }
+        // console.log(MyClassRoom.get());
+        // MyClassRoom.number = 60
+        // console.log(MyClassRoom.get());
+        // const myclassroom = new MyClassRoom(20)
+        // console.log(myclassroom.get());
+        // class Person4 {
+        //     constructor(name) {
+        //         this.name = name;
+        //         // 重新绑定getName()函数中this的指向为当前实例
+        //         this.getName = this.getName.bind(this);
+        //     }
+        //     getName() {
+        //         return this.name;
+        //     }
+        // }
+        // const p = new Person4('cao teacher');
+        // let { getName } = p;
+        
+        // console.log(getName());
+        // 父类
+        // class Animal{
+        //     constructor(type){
+        //         this.type = type
+        //     }
+        // }
+        // // 子类
+        // class Cat extends Animal {
+        //     constructor(name,type){
+        //         // 先执行super关键字函数
+        //         super(type)
+        //         this.name = name
+        //     }
+        //     getName(){
+        //         return this.name
+        //     }
+        // }
+        // const cat = new Cat('tom','cat')
+        // console.log(cat.type);
+        // console.log(cat.getName());
+
+        // class myArr extends Array {
+        //     constructor() {
+        //         super()
+        //     }
+        //     pushItem(item){
+        //         this.push(item)
+        //     }
+        // }
+        // let arr = new myArr()
+        // arr.pushItem({name:'cao teacher'})
+        class Parent {
+            static staticMethod() {
+                return 'hello';
+            }
+        }
+        class Child extends Parent {}
+        // 通过子类本身可以访问到父类的静态函数，输出“hello”
+        console.log(Child.staticMethod());
+    </script>
+</body>
+</html>
